@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>Saylor Moon LTDA</title>
+        <meta name="description" content=""/>
+        <meta name="viewport" content="width=device-width"/>
+        <base href="/"/>
+        <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+        <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="/style/miestilo.css"/>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    </head>
+    <body onload="ponerNombre()">
+        
+        
+        <div class="container authenticated">
+            
+            <div class='row' style='height:90px;align-items: center;'>
+                <div class='col-xs-6 col-lg-2' >
+                    <img src="" id="avatar" height="50">
+                </div>
+                <div>      
+                    <span>Bienvenid@
+                        <span id=welcome> </span>
+                    </span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3>Menu de la Aplicación Saylor Moon - G9</h3>
+                </div>
+                
+                <div class="fog-low text-leftcenter">
+                    <img src="./image/sailor.png" alt="" width="250" height="250">
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="card-box bg-primary">
+                        <div class="inner">
+                            <h3>Productos</h3>
+                            <p>Info. de Productos</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-clipboard-list" aria-hidden="true"></i>
+                        </div>
+                        <a href="productos.html" class="card-box-footer">Ver Mas <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                              
+                <div class="col-lg-3 col-sm-6">
+                    <div class="card-box bg-green">
+                        <div class="inner">
+                            <h3>Usuarios</h3>
+                            <p>Datos de Usuarios</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-list" aria-hidden="true"></i>
+                        </div>
+                        <a href="usuarios.html" class="card-box-footer">Ver Mas <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <br/><br/><br/>
+            <p id="display-time">
+                <script>
+                    function myFunc()  {
+                    var mydate=new Date();
+                    var year=mydate.getYear();
+                    if (year < 1000)
+                      year+=1900;
+                      var day=mydate.getDay();
+                      var month=mydate.getMonth()+1;
+                      if (month<10)
+                       month="0"+month;
+                       var daym=mydate.getDate();
+                       if (daym<10)
+                        daym="0"+daym;       
+                    
+                    var now = new Date()           
+                    var fechahora = "Fecha: " + daym + "/" + month + "/" +year + " - Hora: " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+                    document.getElementById('display-time').innerHTML = fechahora;
+                }
+                setInterval(myFunc, 1000);
+                </script>
+            </p>
+            <hr/>
+            
+            <div>
+               
+                <a class="btn btn-primary" href="index.html" role="button">Logout</a>
+            </div>
+            
+            
+        </div>
+        <script type="text/javascript" src="/js/nombre.js"></script>
+
+        <script type="text/javascript">              
+            window.onload = ponerNombre();          
+        </script>
+        
+    </body>
+    
+        
+</html>

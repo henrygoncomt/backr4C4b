@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>Saylor Moon Ltda.</title>
+        <meta name="description" content=""/>
+        <meta name="viewport" content="width=device-width"/>
+        <base href="/"/>
+        <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+        <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+
+        <script type="text/javascript" src="/js/usuarios.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Usuarios</h1>
+
+            <button type="button" class="btn btn-success" onclick="nuevoAd()">Nuevo Usuario</button>
+            <a class="btn btn-primary" href="menu.html" role="button">Regresar al Menú</a>
+            <div id="tabla"></div>
+        </div>
+        
+        <!-- Modal para el formulario de guardar o actualizar -->
+            <div class="modal fade" id="modalAdministrador" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="tituloModalAdministrador">Titulo</h5>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-sm-12 col-lg-6">
+                                    <label for="id" class="form-label">ID</label>
+                                    <input type="text" class="form-control" id="id" placeholder="Id de Cliente" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="identification" class="text-dark">Identificacion:</label><br />
+                                    <input type="text" name="identification" id="identification" class="form-control" required/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="name" class="text-dark">Nombre:</label><br />
+                                    <input type="text" name="name" id="name" class="form-control" required/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="address" class="text-dark">Dirección:</label><br />
+                                    <input type="text" name="address" id="address" class="form-control" required/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cellPhone" class="text-dark">Celular:</label><br />
+                                    <input type="text" name="cellPhone" id="cellPhone" class="form-control" required/>
+                                </div>                          
+                            
+                                <div class="form-group">
+                                    <label for="email" class="text-dark">E-mail:</label><br />
+                                    <input type="email" name="email" id="email" class="form-control"  required/>
+                                </div>
+                            
+                                <div class="form-group">
+                                    <label for="password" class="text-dark">Clave:</label><br />
+                                    <input type="password" name="password" id="password" class="form-control" required/>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="zone" class="text-dark">Zona:</label><br />
+                                    <select class="form-control" name="zone" id="zone" required
+                                        style="height: auto">
+                                        <option value="" selected>
+                                          Seleccione a zona
+                                        </option>
+                                        <option value="COMUNA_1_NORTE">
+                                          COMUNA1 NORTE
+                                        </option>
+                                        <option value="COMUNA_2_NORTORIENTAL">
+                                          COMUNA 2 NORTORIENTAL
+                                        </option>
+                                        <option value="COMUNA_3_SAN_FRANCISCO">
+                                            COMUNA 3 SAN FRANCISCO
+                                        </option>
+                                        <option value="COMUNA_4_OCCIDENTAL">
+                                          COMUNA 4 OCCIENTAL
+                                        </option>
+                                        <option value="COMUNA_5_GARCIA_ROVIRA">
+                                          COMUNA 5 GARCIA ROVIRA
+                                        </option>
+                                        <option value="COMUNA_6_LA_CONCORDIA">
+                                          COMUNA 6 LA CONCORDIA
+                                        </option>
+                                        <option value="COMUNA_7_LA_CIUDADELA">
+                                          COMUNA 7 LA CIUDADELA
+                                        </option>
+                                        <option value="COMUNA_8_SUR_OCCIDENTE">
+                                          COMUNA 8 SUR OCCIDENTE
+                                        </option>
+                                        <option value="COMUNA_9_LA_PEDREGOSA">
+                                          COMUNA 9 LA PEDREGOSA
+                                        </option>
+                                        <option value="COMUNA_10_PROVENZA">
+                                          COMUNA 10 PROVENZA
+                                        </option>
+                                        <option value="COMUNA_11_SUR">
+                                          COMUNA 11 SUR
+                                        </option>
+                                        <option value="COMUNA_12_CABECERA_DEL_LLANO">
+                                          COMUNA 12 CABECERA DEL LLANO
+                                        </option>
+                                        <option value="COMUNA_13_ORIENTAL">
+                                          COMUNA 13 ORIENTAL
+                                        </option>
+                                        <option value="COMUNA_14_MORRORICO">
+                                          COMUNA 14 MORRORICO
+                                        </option>
+                                        <option value="COMUNA_15_CENTRO">
+                                          COMUNA 15 CENTRO
+                                        </option>
+                                        <option value="COMUNA_16_LAGOS_DEL_CACIQUE">
+                                          COMUNA 16 LAGOS DEL CACIQUE
+                                        </option>
+                                        <option value="COMUNA_17_MUTIS">
+                                          COMUNA 17 MUTIS
+                                        </option>
+                                    </select>
+                                </div>    
+   
+                                <div class="form-group">                            
+                                    <label for="type" class="text-dark">Tipo:</label><br />
+                                    <select class="form-control" name="type" id="type" required
+                                        style="height: auto">
+                                        <option value="" selected>
+                                            Seleccione tipo usaurio
+                                        </option>
+                                        <option value="ADM">
+                                            ADM
+                                        </option>
+                                        <option value="COORD">
+                                            COORD
+                                        </option>
+                                        <option value="ASE">
+                                            ASE
+                                        </option>
+                                    </select>
+                                </div>                            
+                            </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" onclick="guardarCambiosAd()">Guardar</button>
+                            <button type="button" class="btn btn-secondary" onclick="cerrarModal()">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- fin del modal de formulario -->
+            <!-- modal de mensaje de confirmacion -->
+            <div class="modal fade" id="modalMensaje" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="tituloModalMensaje">Mensaje</h5>
+                        </div>
+                        <div class="modal-body">
+                            <p id="mensaje">
+                                
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" onclick="cerrarModalMensaje()">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- fin del modal de mensaje de confirmacion -->
+
+    </body>
+</html>

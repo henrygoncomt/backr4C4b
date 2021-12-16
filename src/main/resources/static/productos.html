@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>Saylor Moon Ltda.</title>
+        <meta name="description" content=""/>
+        <meta name="viewport" content="width=device-width"/>
+        <base href="/"/>
+        <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+        <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+       
+    </head>
+    <body>
+        
+        <div class="container">
+            <h1>Productos</h1>
+            <button type="button" class="btn btn-success" onclick="nuevoProducto()">Nuevo Producto</button>
+            <a class="btn btn-primary" href="menu.html" role="button">Regresar al Menú</a>
+
+            <div id="tablaProducto"></div>
+
+
+            <div class="modal fade" id="modalProducto" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="tituloModalProducto">Titulo</h5>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-sm-12 col-lg-6">
+                                    <label for="reference" class="form-label">Referencia</label>
+                                    <input type="text" class="form-control" id="reference" placeholder="Referencia *" required>
+                                </div>
+                                <div class="col-sm-12 col-lg-6">
+                                    <label for="brand" class="form-label">Marca</label>
+                                    <input type="text" class="form-control" id="brand" placeholder="Marca" required>
+                                </div>
+                                <div class="col-sm-12 col-lg-6">
+                                    <label for="category" class="form-label">Categoria</label>
+                                    <input type="text" class="form-control" id="category" placeholder="Categoria" required>
+                                </div>
+                                <div class="col-sm-12 col-lg-6">
+                                    <label for="material" class="form-label">Material</label>
+                                    <select class="form-control" name="material" id="material" required
+                                        style="height: auto">
+                                        <option value="" selected>
+                                            Seleccione Material
+                                        </option>
+                                        <option value="LEATHER">
+                                            LEATHER
+                                        </option>
+                                        <option value="SYSTHETIC">
+                                            SYNTHETIC
+                                        </option>
+                                        
+                                    </select>
+                                    
+                                </div>
+                                <div class="col-sm-12 col-lg-6">
+                                    <label for="gender" class="form-label">Genero</label>
+                                    <select class="form-control" name="gender" id="gender" required
+                                        style="height: auto">
+                                        <option value="" selected>
+                                            Seleccione Genero
+                                        </option>
+                                        <option value="FEM">
+                                            FEM
+                                        </option>
+                                        <option value="MAN">
+                                            MAN
+                                        </option>
+                                        <option value="UNISEX">
+                                            UNISEX
+                                        </option>
+                                        
+                                    </select>
+                                </div>
+                                <div class="col-sm-12 col-lg-6">
+                                    <label for="size" class="form-label">Tamaño</label>
+                                    <input type="text" class="form-control" id="size" placeholder="Tamaño" required>
+                                </div>
+                                <div class="col-sm-12 col-lg-6">
+                                    <label for="description" class="form-label">Descripción</label>
+                                    <input type="text" class="form-control" id="description" placeholder="Descrición" required>
+                                </div>
+                                <div class="form-group">                            
+                                    <label for="availability" class="text-dark">Disponibilidad:</label><br />
+                                    <select class="form-control" name="availability" id="availability" required
+                                        style="height: auto">
+                                        <option value="" selected>
+                                            Seleccione Disponibilidad
+                                        </option>
+                                        <option value="true">
+                                            true
+                                        </option>
+                                        <option value="false">
+                                            false
+                                        </option>
+                                    </select>
+                                </div>                            
+                                <div class="col-sm-12 col-lg-6">
+                                    <label for="price" class="form-label">Precio</label>
+                                    <input type="number" class="form-control" id="price" placeholder="Precio" required>
+                                </div>
+                                <div class="col-sm-12 col-lg-6">
+                                    <label for="quantity" class="form-label">Cantidad</label>
+                                    <input type="number" class="form-control" id="quantity" placeholder="Cantidad" required>
+                                </div>
+                                <div class="col-sm-12 col-lg-6">
+                                    <label for="photography" class="form-label">Foto</label>
+                                    <input type="text" class="form-control" id="photography" placeholder="Foto" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" onclick="guardarCambiosO()">Guardar</button>
+                            <button type="button" class="btn btn-secondary" onclick="cerrarModal()">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="modal fade" id="modalMensaje" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="tituloModalProducto">Mensaje</h5>
+                        </div>
+                        <div class="modal-body">
+                            <p id="mensaje">
+
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" onclick="cerrarModalMensaje()">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <script type="text/javascript" src="/js/productos.js"></script>
+    </body>
+
+</html>
